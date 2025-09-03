@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview": "npm run build && node scripts/preview.mjs",
+    "serve:out": "node scripts/preview.mjs",
     "start": "next start",
     "lint": "next lint"
   },

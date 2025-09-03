@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Mail, MapPin, Phone } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -63,17 +64,104 @@ export default function HomePage() {
 
       {/* Contact */}
       <section id="contact" className="container mt-20 md:mt-28 mb-24">
-        <div className="mb-6">
-          <h2 className="font-serif text-3xl md:text-4xl">Contact</h2>
-          <p className="text-muted mt-2">I’m open to collaborations and interesting problems.</p>
+        <div className="mb-8 md:mb-10 text-center md:text-left">
+          <h2 className="font-serif text-3xl md:text-4xl">Get in touch</h2>
         </div>
-        <div className="prose">
-          <p>
-            Email: <a className="underline decoration-border underline-offset-4 hover:text-fg" href="mailto:haruka08030@gmail.com">haruka08030@gmail.com</a>
-          </p>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Info card */}
+          <Card className="h-max">
+            <CardHeader>
+              <CardTitle className="font-serif">Contact Information</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4 text-sm">
+                <a href="mailto:haruka08030@gmail.com" className="flex items-center gap-3 hover:text-fg transition-colors">
+                  <Mail className="h-5 w-5" />
+                  <span>haruka08030@gmail.com</span>
+                </a>
+                <a
+                  href="tel:+819000000000"
+                  className="flex items-center gap-3 hover:text-fg transition-colors"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span>+1 (925) 293-6440</span>
+                </a>
+                <div className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5" />
+                  <span>San Francisco Bay Area</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Form */}
+          <Card>
+            <CardContent className="pt-6">
+              <form
+                className="space-y-4"
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  const form = e.currentTarget as HTMLFormElement
+                  const data = new FormData(form)
+                  const name = (data.get('name') as string) || ''
+                  const from = (data.get('email') as string) || ''
+                  const subject = (data.get('subject') as string) || ''
+                  const message = (data.get('message') as string) || ''
+                  const mailto = new URL(`mailto:haruka08030@gmail.com`)
+                  const finalSubject = subject || 'Portfolio Contact'
+                  const body = `${message}\n\n— ${name || 'Anonymous'} (${from || 'no email'})`
+                  mailto.searchParams.set('subject', finalSubject)
+                  mailto.searchParams.set('body', body)
+                  window.location.href = mailto.toString()
+                }}
+              >
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-1 block text-sm">Name</label>
+                    <input
+                      name="name"
+                      type="text"
+                      className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-sm">Email</label>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20"
+                      placeholder="you@email.com"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="mb-1 block text-sm">Subject</label>
+                  <input
+                    name="subject"
+                    type="text"
+                    className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20"
+                    placeholder="Subject"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1 block text-sm">Message</label>
+                  <textarea
+                    name="message"
+                    className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20 min-h-[160px]"
+                    placeholder="Write your message..."
+                  />
+                </div>
+                <div>
+                  <Button type="submit" className="w-full">Send Message</Button>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>
   )
 }
-
