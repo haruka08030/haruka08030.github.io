@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#E6E3DE"/>
+  <rect x="60" y="60" width="1080" height="780" fill="#F5F3EF" stroke="#D6D2CC"/>
+  <text x="600" y="470" text-anchor="middle" font-family="'Playfair Display', serif" font-size="48" fill="#1C1C1C">Haruka – Portfolio</text>
+  <text x="600" y="520" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" fill="#6F6F6F">Design × Research × Code</text>
+  <circle cx="200" cy="230" r="6" fill="#7A8CA6"/>
+  <circle cx="220" cy="230" r="6" fill="#7A8CA6"/>
+  <circle cx="240" cy="230" r="6" fill="#7A8CA6"/>
+</svg>
+
