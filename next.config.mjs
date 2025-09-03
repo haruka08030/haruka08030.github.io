@@ -8,7 +8,6 @@ const assetPrefix = basePath || ''
 const config = {
   output: 'export',
   images: { unoptimized: true },
-  // Only set when using project pages
   ...(basePath ? { basePath } : {}),
   ...(assetPrefix ? { assetPrefix } : {}),
 }

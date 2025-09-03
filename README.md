@@ -6,7 +6,7 @@ Minimal Next.js 14 + TypeScript + Tailwind + shadcn/ui portfolio designed for Gi
 - Next.js 14 App Router, TypeScript
 - Tailwind CSS + Typography plugin
 - shadcn/ui (Button, Card)
-- Static export via `next export` to `out/`
+- Static export via Next 14 `output: 'export'` (no `next export`) to `out/`
 - GitHub Actions deploy to Pages
 
 ## Local Development
@@ -36,7 +36,7 @@ This repo includes `.github/workflows/deploy.yml` to build and deploy on push to
 3) Push to `main` to trigger the workflow.
 
 ### Base Path
-`next.config.ts` sets `output: 'export'` and disables image optimization. When `USE_ROOT_PAGES` is not `true`, it applies `basePath` and `assetPrefix` to `/${REPO_NAME}`. For the root repo (`haruka08030.github.io`), no base path is set.
+`next.config.mjs` sets `output: 'export'` and disables image optimization. When `USE_ROOT_PAGES` is not `true`, it applies `basePath` and `assetPrefix` to `/${REPO_NAME}`. For the root repo (`haruka08030.github.io`), no base path is set.
 
 ## Design
 - Ivory background (`#F5F3EF`) + serif headings (Playfair Display) + Inter body text.
@@ -47,4 +47,3 @@ Static `public/sitemap.xml` and `public/robots.txt` are included and copied to `
 
 ## License
 Private, all rights reserved.
-

@@ -16,6 +16,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      REPO_NAME: ${{ vars.REPO_NAME }}
+      USE_ROOT_PAGES: ${{ vars.USE_ROOT_PAGES }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,9 +35,6 @@ jobs:
         if: ${{ env.USE_ROOT_PAGES != 'true' }}
         run: |
           echo "Using project Pages path: /${{ env.REPO_NAME }}"
-        env:
-          REPO_NAME: ${{ vars.REPO_NAME }}
-          USE_ROOT_PAGES: ${{ vars.USE_ROOT_PAGES }}
 
       - name: Build (next build & export)
         run: npm run build
