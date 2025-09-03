@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' })
@@ -37,10 +38,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen antialiased">
         <header className="border-b border-border/80 bg-[var(--bg)]/60 backdrop-blur supports-[backdrop-filter]:bg-[var(--bg)]/60 sticky top-0 z-50">
           <div className="container flex h-14 items-center justify-between">
-            <a href="#" className="font-serif text-xl tracking-tight">Haruka</a>
+            <Link href="#" className="font-serif text-xl tracking-tight">Haruka</Link>
             <nav className="flex items-center gap-6 text-sm text-muted">
-              <a href="#projects" className="hover:text-fg transition-colors">Projects</a>
-              <a href="#contact" className="hover:text-fg transition-colors">Contact</a>
+              <Link href="#projects" className="hover:text-fg transition-colors">Projects</Link>
+              <Link href="#contact" className="hover:text-fg transition-colors">Contact</Link>
               <a href="https://github.com/haruka08030" target="_blank" rel="noreferrer" className="hover:text-fg transition-colors">GitHub</a>
             </nav>
           </div>
@@ -53,4 +54,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-
