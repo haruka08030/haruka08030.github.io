@@ -22,7 +22,9 @@ export default function HomePage() {
               Haruka – Portfolio
             </motion.h1>
             <p className="mt-4 text-lg text-muted max-w-prose">
-              Design × Research × Code. Exploring the intersection of thoughtful design and reliable engineering.
+              Economics × Finance × Programming
+              <br />
+              Economics student pursuing Bachelor&#39;s Degree and CPA.
             </p>
             <div className="mt-6 flex gap-3">
               <Button asChild>
