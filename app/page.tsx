@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone, GraduationCap, School } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -64,104 +64,172 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="container mt-20 md:mt-28 mb-24">
-        <div className="mb-8 md:mb-10 text-center md:text-left">
-          <h2 className="font-serif text-3xl md:text-4xl">Get in touch</h2>
+      {/* Education */}
+      <section id="education" className="bg-white mt-20 md:mt-28">
+        <div className="container py-20 md:py-28">
+          <div className="mb-8 md:mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl">Education</h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
+            {/* Community College */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 font-serif">
+                  <GraduationCap className="h-5 w-5" />
+                  Diablo Valley College
+                </CardTitle>
+                <p className="mt-1 text-sm text-muted">Associate Degree in Economics (expected)</p>
+                <CardDescription>Pleasant Hill, CA • June 2024 – Dec 2025</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-5 space-y-1 text-sm">
+                  <li>Major: Economics</li>
+                  <li>GPA: 4.00 / 4.00</li>
+                  <li>Graduating one semester early through accelerated coursework and transfer planning.</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* High School */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 font-serif">
+                  <School className="h-5 w-5" />
+                  Penn Foster High School
+                </CardTitle>
+                <p className="mt-1 text-sm text-muted">High School Diploma</p>
+                <CardDescription>Online, USA • June 2023 – Sep 2023</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-5 space-y-1 text-sm">
+                  <li>Pursued concurrently with Japanese high school, withdrew once U.S. graduation was secured.</li>
+                  <li></li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Additional High School
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 font-serif">
+                  <School className="h-5 w-5" />
+                  Ichikawa High School
+                </CardTitle>
+                <p className="mt-1 text-sm text-muted">Degree: 高等学校卒業（Diploma）</p>
+                <CardDescription>Chiba, Japan • Apr 2022 – July 2023</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-5 space-y-1 text-sm">
+                  <li>卒業（Diploma）</li>
+                  <li>活動・受賞など（任意）</li>
+                </ul>
+              </CardContent>
+            </Card> */}
+          </div>
         </div>
+      </section>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {/* Info card */}
-          <Card className="h-max">
-            <CardHeader>
-              <CardTitle className="font-serif">Contact Information</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4 text-sm">
-                <a href="mailto:haruka08030@gmail.com" className="flex items-center gap-3 hover:text-fg transition-colors">
-                  <Mail className="h-5 w-5" />
-                  <span>haruka08030@gmail.com</span>
-                </a>
-                <a
-                  href="tel:+819000000000"
-                  className="flex items-center gap-3 hover:text-fg transition-colors"
-                >
-                  <Phone className="h-5 w-5" />
-                  <span>+1 (925) 293-6440</span>
-                </a>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5" />
-                  <span>San Francisco Bay Area</span>
+      {/* Contact */}
+      <section id="contact" className="bg-accent/5">
+        <div className="container py-20 md:py-28">
+          <div className="mb-8 md:mb-10 text-center md:text-left">
+            <h2 className="font-serif text-3xl md:text-4xl">Get in touch</h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Info card */}
+            <Card className="h-max">
+              <CardHeader>
+                <CardTitle className="font-serif">Contact Information</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4 text-sm">
+                  <a href="mailto:haruka08030@gmail.com" className="flex items-center gap-3 hover:text-fg transition-colors">
+                    <Mail className="h-5 w-5" />
+                    <span>haruka08030@gmail.com</span>
+                  </a>
+                  <a
+                    href="tel:+819000000000"
+                    className="flex items-center gap-3 hover:text-fg transition-colors"
+                  >
+                    <Phone className="h-5 w-5" />
+                    <span>+1 (925) 293-6440</span>
+                  </a>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-5 w-5" />
+                    <span>San Francisco Bay Area</span>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          {/* Form */}
-          <Card>
-            <CardContent className="pt-6">
-              <form
-                className="space-y-4"
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  const form = e.currentTarget as HTMLFormElement
-                  const data = new FormData(form)
-                  const name = (data.get('name') as string) || ''
-                  const from = (data.get('email') as string) || ''
-                  const subject = (data.get('subject') as string) || ''
-                  const message = (data.get('message') as string) || ''
-                  const mailto = new URL(`mailto:haruka08030@gmail.com`)
-                  const finalSubject = subject || 'Portfolio Contact'
-                  const body = `${message}\n\n— ${name || 'Anonymous'} (${from || 'no email'})`
-                  mailto.searchParams.set('subject', finalSubject)
-                  mailto.searchParams.set('body', body)
-                  window.location.href = mailto.toString()
-                }}
-              >
-                <div className="grid gap-4 sm:grid-cols-2">
+            {/* Form */}
+            <Card>
+              <CardContent className="pt-6">
+                <form
+                  className="space-y-4"
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    const form = e.currentTarget as HTMLFormElement
+                    const data = new FormData(form)
+                    const name = (data.get('name') as string) || ''
+                    const from = (data.get('email') as string) || ''
+                    const subject = (data.get('subject') as string) || ''
+                    const message = (data.get('message') as string) || ''
+                    const mailto = new URL(`mailto:haruka08030@gmail.com`)
+                    const finalSubject = subject || 'Portfolio Contact'
+                    const body = `${message}\n\n— ${name || 'Anonymous'} (${from || 'no email'})`
+                    mailto.searchParams.set('subject', finalSubject)
+                    mailto.searchParams.set('body', body)
+                    window.location.href = mailto.toString()
+                  }}
+                >
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label className="mb-1 block text-sm">Name</label>
+                      <input
+                        name="name"
+                        type="text"
+                        className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-1 block text-sm">Email</label>
+                      <input
+                        name="email"
+                        type="email"
+                        required
+                        className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20"
+                        placeholder="you@email.com"
+                      />
+                    </div>
+                  </div>
                   <div>
-                    <label className="mb-1 block text-sm">Name</label>
+                    <label className="mb-1 block text-sm">Subject</label>
                     <input
-                      name="name"
+                      name="subject"
                       type="text"
                       className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20"
-                      placeholder="Your name"
+                      placeholder="Subject"
                     />
                   </div>
                   <div>
-                    <label className="mb-1 block text-sm">Email</label>
-                    <input
-                      name="email"
-                      type="email"
-                      required
-                      className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20"
-                      placeholder="you@email.com"
+                    <label className="mb-1 block text-sm">Message</label>
+                    <textarea
+                      name="message"
+                      className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20 min-h-[160px]"
+                      placeholder="Write your message..."
                     />
                   </div>
-                </div>
-                <div>
-                  <label className="mb-1 block text-sm">Subject</label>
-                  <input
-                    name="subject"
-                    type="text"
-                    className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20"
-                    placeholder="Subject"
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-sm">Message</label>
-                  <textarea
-                    name="message"
-                    className="w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-fg/20 min-h-[160px]"
-                    placeholder="Write your message..."
-                  />
-                </div>
-                <div>
-                  <Button type="submit" className="w-full">Send Message</Button>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
+                  <div>
+                    <Button type="submit" className="w-full">Send Message</Button>
+                  </div>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
     </div>
