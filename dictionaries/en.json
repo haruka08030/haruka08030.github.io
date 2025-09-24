@@ -1,0 +1,50 @@
+{
+  "page": {
+    "hero": {
+      "title": "Haruka – Portfolio",
+      "subtitle": "Economics × Finance × Programming",
+      "description": "Economics student pursuing Bachelor's Degree and CPA.",
+      "viewProjects": "View Projects",
+      "contact": "Contact"
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Selected work presented simply.",
+      "projectTitle": "Project {i}",
+      "projectDescription": "Short description goes here."
+    },
+    "education": {
+      "title": "Education",
+      "dvc": {
+        "name": "Diablo Valley College",
+        "degree": "Associate Degree in Economics (expected)",
+        "location": "Pleasant Hill, CA • June 2024 – Dec 2025",
+        "major": "Major: Economics",
+        "gpa": "GPA: 4.00 / 4.00",
+        "description": "Graduating one semester early through accelerated coursework and transfer planning."
+      },
+      "pennfoster": {
+        "name": "Penn Foster High School",
+        "degree": "High School Diploma",
+        "location": "Online, USA • June 2023 – Sep 2023",
+        "description": "Pursued concurrently with Japanese high school, withdrew once U.S. graduation was secured."
+      }
+    },
+    "contact": {
+      "title": "Get in touch",
+      "infoTitle": "Contact Information",
+      "location": "San Francisco Bay Area",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Your name",
+        "email": "Email",
+        "emailPlaceholder": "you@email.com",
+        "subject": "Subject",
+        "subjectPlaceholder": "Subject",
+        "message": "Message",
+        "messagePlaceholder": "Write your message...",
+        "submit": "Send Message"
+      }
+    }
+  }
+}
