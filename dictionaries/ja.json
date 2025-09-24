@@ -1,0 +1,49 @@
+{
+  "page": {
+    "hero": {
+      "title": "ポートフォリオ",
+      "subtitle": "経済学 × 金融 × プログラミング",
+      "description": "",
+      "viewProjects": "Projects",
+      "contact": "Contact"
+    },
+    "projects": {
+      "title": "Projects",
+      "projectTitle": "プロジェクト {i}",
+      "projectDescription": "ここに簡単な説明が入ります。"
+    },
+    "education": {
+      "title": "学歴",
+      "dvc": {
+        "name": "Diablo Valley College",
+        "degree": "準学士号 経済学（取得見込み）",
+        "location": "カリフォルニア州プレザントヒル • 2024年6月 – 2025年12月",
+        "major": "専攻: 経済学",
+        "gpa": "GPA: 4.00 / 4.00",
+        "description": "単位早期取得により、1学期早く卒業予定。"
+      },
+      "pennfoster": {
+        "name": "Penn Foster High School",
+        "degree": "高校卒業資格",
+        "location": "オンライン、米国 • 2023年6月 – 2023年9月",
+        "description": "日本の高校と並行して在籍、その後日本側を中退して飛び級で大学進学。"
+      }
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "infoTitle": "連絡先",
+      "location": "San Francisco Bay Area, CA",
+      "form": {
+        "name": "お名前",
+        "namePlaceholder": "お名前",
+        "email": "メールアドレス",
+        "emailPlaceholder": "you@email.com",
+        "subject": "件名",
+        "subjectPlaceholder": "件名",
+        "message": "メッセージ",
+        "messagePlaceholder": "メッセージを入力してください...",
+        "submit": "メッセージを送信"
+      }
+    }
+  }
+}

@@ -16,7 +16,6 @@ const assetPrefix = basePath || ''
 
 /** @type {import('next').NextConfig} */
 const config = {
-  output: 'export',
   images: { unoptimized: true },
   ...(basePath ? { basePath } : {}),
   ...(assetPrefix ? { assetPrefix } : {}),
