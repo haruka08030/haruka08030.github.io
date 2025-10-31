@@ -5,17 +5,19 @@ export type Project = {
   image: string;
   tags: string[];
   githubUrl: string;
+  websiteUrl?: string;
 };
 
 export const projectsData: { [key: string]: Project[] } = {
   en: [
     {
       id: 1,
-      title: 'Project 1',
-      description: 'A short description of the first project.',
-      image: '/images/project1.svg',
-      tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      githubUrl: 'https://github.com/example/project1',
+      title: 'Loanly',
+      description: 'AI-powered loan application platform that streamlines the loan process with dual AI architecture.',
+      image: '/images/Loanly.png',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      githubUrl: 'https://github.com/haruka08030/Loanly',
+      websiteUrl: 'https://loanly-one.vercel.app/',
     },
     {
       id: 2,
@@ -37,11 +39,12 @@ export const projectsData: { [key: string]: Project[] } = {
   ja: [
     {
       id: 1,
-      title: '優待マップ',
-      description: '保有している株主優待を一括で管理できるアプリです。',
-      image: '/images/project1.svg', // NOTE: Using a placeholder image
-      tags: ['Flutter', 'Dart', 'Supabase'],
-      githubUrl: 'https://github.com/haruka08030/yuutai-map',
+      title: 'Loanly',
+      description: 'デュアルAIアーキテクチャでローン申請プロセスを効率化する、AI搭載ローン申請プラットフォーム。',
+      image: '/images/Loanly.png',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      githubUrl: 'https://github.com/haruka08030/Loanly',
+      websiteUrl: 'https://loanly-one.vercel.app/',
     },
     {
       id: 2,

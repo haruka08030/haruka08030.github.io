@@ -110,9 +110,9 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
                     <Mail className="h-5 w-5" />
                     <span>haruka08030@gmail.com</span>
                   </a>
-                  <a href="tel:+19252936440" className="flex items-center gap-3 hover:text-fg transition-colors">
+                  <a href="tel:+15106345712" className="flex items-center gap-3 hover:text-fg transition-colors">
                     <Phone className="h-5 w-5" />
-                    <span>+1 (925) 293-6440</span>
+                    <span>+1 (510) 634-5712</span>
                   </a>
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5" />

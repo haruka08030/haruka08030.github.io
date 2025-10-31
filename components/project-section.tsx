@@ -28,7 +28,7 @@ export default function ProjectSection({ projects, dictionary }: ProjectSectionP
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="relative aspect-[4/3] overflow-hidden rounded border border-border">
+              <div className="relative aspect-[16/9] overflow-hidden rounded border border-border">
                 <Image
                   src={project.image}
                   alt={project.title}
