@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import ContactForm from '@/components/contact-form'
 import { projectsData } from '@/data/projects'
+import ProjectSection from '@/components/project-section'
 
 export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(lang)
@@ -41,32 +42,7 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
       </section>
 
       {/* Projects */}
-      <section id="projects" className="container mt-20 md:mt-28">
-        <div className="mb-8 md:mb-10">
-          <h2 className="font-serif text-3xl md:text-4xl">{d.projects.title}</h2>
-          <p className="text-muted mt-2">{d.projects.description}</p>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <Card key={project.id}>
-              <CardHeader>
-                <CardTitle className="font-serif">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="relative aspect-[4/3] overflow-hidden rounded border border-border">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+      <ProjectSection projects={projects} dictionary={d.projects} />
 
       {/* Education */}
       <section id="education" className="bg-white mt-20 md:mt-28">
@@ -134,9 +110,9 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
                     <Mail className="h-5 w-5" />
                     <span>haruka08030@gmail.com</span>
                   </a>
-                  <a href="tel:+19252936440" className="flex items-center gap-3 hover:text-fg transition-colors">
+                  <a href="tel:+15106345712" className="flex items-center gap-3 hover:text-fg transition-colors">
                     <Phone className="h-5 w-5" />
-                    <span>+1 (925) 293-6440</span>
+                    <span>+1 (510) 634-5712</span>
                   </a>
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5" />
