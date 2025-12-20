@@ -42,7 +42,7 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
       </section>
 
       {/* Projects */}
-      <ProjectSection projects={projects} dictionary={d.projects} />
+      <ProjectSection projects={projects} dictionary={d.projects} limit={3} isHomePage={true} lang={lang} />
 
       {/* Education */}
       <section id="education" className="bg-white mt-20 md:mt-28">

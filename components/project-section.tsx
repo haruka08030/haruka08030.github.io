@@ -2,17 +2,26 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Project } from '@/data/projects'
 import ProjectModal from '@/components/project-modal'
+import { Button } from '@/components/ui/button'
+
+import { Locale } from '@/i18n-config'
 
 interface ProjectSectionProps {
   projects: Project[]
   dictionary: any
+  limit?: number
+  isHomePage?: boolean
+  lang: Locale
 }
 
-export default function ProjectSection({ projects, dictionary }: ProjectSectionProps) {
+export default function ProjectSection({ projects, dictionary, limit, isHomePage, lang }: ProjectSectionProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+
+  const displayedProjects = isHomePage && limit ? projects.slice(0, limit) : projects
 
   return (
     <section id="projects" className="container mt-20 md:mt-28">
@@ -21,7 +30,7 @@ export default function ProjectSection({ projects, dictionary }: ProjectSectionP
         <p className="text-muted mt-2">{dictionary.description}</p>
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
+        {displayedProjects.map((project) => (
           <Card key={project.id} onClick={() => setSelectedProject(project)} className="cursor-pointer">
             <CardHeader>
               <CardTitle className="font-serif">{project.title}</CardTitle>
@@ -50,6 +59,14 @@ export default function ProjectSection({ projects, dictionary }: ProjectSectionP
           </Card>
         ))}
       </div>
+
+      {isHomePage && limit && projects.length > limit && (
+        <div className="text-center mt-10">
+          <Button asChild>
+            <Link href={`/${lang}/projects`}>{dictionary.viewAllProjects}</Link>
+          </Button>
+        </div>
+      )}
 
       {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
     </section>
