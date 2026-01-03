@@ -1,9 +1,9 @@
 {
   "page": {
     "hero": {
-      "title": "Haruka – Portfolio",
-      "subtitle": "Economics × Finance × Programming",
-      "description": "Economics student pursuing Bachelor's Degree and CPA.",
+      "title": "Haruka\nSugiyama",
+      "subtitle": "Economics Student & Developer",
+      "description": "Pursuing Bachelor's Degree and CPA.",
       "viewProjects": "View Projects",
       "contact": "Contact"
     },
@@ -11,17 +11,18 @@
       "title": "Projects",
       "description": "Selected work presented simply.",
       "projectTitle": "Project {i}",
-      "projectDescription": "Short description goes here."
+      "projectDescription": "Short description goes here.",
+      "viewAllProjects": "View All Projects"
     },
     "education": {
       "title": "Education",
       "dvc": {
         "name": "Diablo Valley College",
         "degree": "Associate Degree in Economics (expected)",
-        "location": "Pleasant Hill, CA • June 2024 – Dec 2025",
+        "location": "Pleasant Hill, CA • June 2024 – May 2026",
         "major": "Major: Economics",
-        "gpa": "GPA: 4.00 / 4.00",
-        "description": "Graduating one semester early through accelerated coursework and transfer planning."
+        "gpa": "GPA: 3.88 / 4.00",
+        "description": "Completed all required credits one semester early through accelerated coursework."
       },
       "pennfoster": {
         "name": "Penn Foster High School",
