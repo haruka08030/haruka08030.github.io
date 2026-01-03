@@ -3,11 +3,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Mail, MapPin, Phone, GraduationCap, School } from 'lucide-react'
 import { getDictionary } from '@/lib/get-dictionary'
 import { Locale } from '@/i18n-config'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import ContactForm from '@/components/contact-form'
 import { projectsData } from '@/data/projects'
 import ProjectSection from '@/components/project-section'
+import WorkButton from '@/components/view-work-button'
 
 export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(lang)
@@ -17,27 +16,20 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
   return (
     <div>
       {/* Hero */}
-      <section className="container pt-12 md:pt-20">
+      <section className="container pt-24 md:pt-32">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
-            <h1 className="font-serif text-4xl md:text-6xl leading-tight">{d.hero.title}</h1>
-            <p className="mt-4 text-lg text-muted max-w-prose">
+            <h1 className="font-serif text-4xl md:text-6xl leading-snug whitespace-pre-line">{d.hero.title}</h1>
+            <p className="mt-8 text-lg text-muted max-w-prose">
               {d.hero.subtitle}
               <br />
               {d.hero.description}
             </p>
-            <div className="mt-6 flex gap-3">
-              <Button asChild>
-                <Link href="#projects">{d.hero.viewProjects}</Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link href="#contact">{d.hero.contact}</Link>
-              </Button>
+            <div className="mt-10">
+              <WorkButton />
             </div>
           </div>
-          <div className="relative aspect-[4/3] rounded-md overflow-hidden border border-border">
-            <Image src="/images/hero.svg" alt="Hero" fill priority sizes="(min-width: 768px) 50vw, 100vw" />
-          </div>
+
         </div>
       </section>
 
